@@ -2,7 +2,6 @@
 set -e
 
 export GODOT_SILENCE_ROOT_WARNING=1
-export HOME="/home/aegis2"
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 GODOT_BIN="${PROJECT_DIR}/tools/godot/godot"
