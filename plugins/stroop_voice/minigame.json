@@ -1,0 +1,26 @@
+{
+  "id": "stroop.voice",
+  "version": "0.1.0",
+  "engine_min": "3.5.0",
+  "category": "inhibition",
+  "difficulty_range": [1, 8],
+  "session_shape": {
+    "min_seconds": 40,
+    "max_seconds": 120,
+    "target_trials": 20
+  },
+  "input": ["tap"],
+  "render_profile": "ui_2d_low",
+  "scene": "res://plugins/stroop_voice/StroopVoice.tscn",
+  "cognitive_hooks": {
+    "metrics": ["accuracy", "avg_reaction_ms", "trials_completed"],
+    "adaptive_strategy": "staircase_accuracy"
+  },
+  "display": {
+    "name": "Test de Stroop",
+    "short_name": "Stroop",
+    "color": "#4ECDC4",
+    "icon": "stroop"
+  },
+  "notes": "v0.1: solo modo tap. Voz/Vosk en iteración posterior."
+}
