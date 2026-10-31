@@ -40,6 +40,7 @@ CognitiveEngine="*res://autoload/CognitiveEngine.gd"
 PluginLoader="*res://autoload/PluginLoader.gd"
 SessionManager="*res://autoload/SessionManager.gd"
 SceneManager="*res://autoload/SceneManager.gd"
+DebugOverlay="*res://autoload/DebugOverlay.gd"
 
 [display]
 

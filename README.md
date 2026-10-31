@@ -51,13 +51,15 @@ Comunicación entre capas solo por **EventBus**. Minijuegos = plugins en `plugin
 
 ## Roadmap resumido
 
-- **A** (en curso): stub plugin + loop EventBus  
-- **B**: `calc.x20` jugable (generador + pad + 20 trials)  
-- **C**: 5 minijuegos + dashboard  
-- **D**: beta F-Droid / rendimiento gama baja  
+- **A** ✅ esqueleto: plugin scan + loop EventBus  
+- **B** ✅ `calc.x20` jugable (generador + pad + 20 trials)  
+- **C** ✅ 5 minijuegos + Hub data-driven  
+- **D** 🚧 beta F-Droid: rendimiento gama baja, MIT, privacidad, fastlane  
 
 Detalle en `docs/roadmap.md`.
 
 ## Licencia
 
-Código orientado a MIT / F-Droid. Sin analytics ni tracking.
+MIT — ver [`LICENSE`](LICENSE).
+
+**Privacidad:** offline-first, sin analytics, sin tracking y sin permisos de red ([`PRIVACY.md`](PRIVACY.md)).

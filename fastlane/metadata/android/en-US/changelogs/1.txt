@@ -1,0 +1,6 @@
+Primera beta (versionCode 1):
+
+• 5 minijuegos jugables: Cálculos ×20, Velocidad de Símbolos, Head Count, Memoria de Trabajo (n-back) y Test de Stroop
+• Dificultad adaptativa con escalera 1–8
+• Índice cognitivo y gráfica de progreso
+• 100% offline: sin permisos, sin cuentas, sin tracking

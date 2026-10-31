@@ -9,6 +9,7 @@ const SFX_POOL_SIZE: int = 8
 
 # Reproductores de temas musicales adaptativos
 var _music_players: Dictionary = {}  # theme_name -> AudioStreamPlayer
+var _theme_streams: Dictionary = {}  # Fase D: cache de streams (carga perezosa)
 var _current_active_theme: String = ""
 
 # Rutas de los temas musicales basados en _raw/
@@ -55,19 +56,25 @@ func _init_sfx_pool() -> void:
 
 
 func _init_music_players() -> void:
+	# Fase D: crea los players vacíos; los streams se cargan bajo demanda
+	# (evita tener ~20 MB de MP3 en RAM al arrancar en gama baja).
 	for theme_name in THEMES.keys():
 		var player = AudioStreamPlayer.new()
 		player.bus = "Master"
 		add_child(player)
-
-		var path = THEMES[theme_name]
-		var stream = _load_mp3_runtime(path)
-		if stream != null:
-			player.stream = stream
-		else:
-			push_warning("[AudioManager] No se pudo cargar el MP3 en runtime para el tema: " + theme_name)
-
 		_music_players[theme_name] = player
+
+
+func _get_theme_stream(theme_name: String) -> AudioStream:
+	if _theme_streams.has(theme_name):
+		return _theme_streams[theme_name]
+	var stream = _load_mp3_runtime(THEMES[theme_name])
+	if stream == null:
+		push_warning("[AudioManager] No se pudo cargar el MP3 en runtime para el tema: " + theme_name)
+		return null
+	stream.loop = true  # Fase D: la música loopea, no muere en silencio
+	_theme_streams[theme_name] = stream
+	return stream
 
 
 func _load_mp3_runtime(path: String) -> AudioStreamMP3:
@@ -101,6 +108,8 @@ func play_theme(theme_name: String) -> void:
 
 	_current_active_theme = theme_name
 	var new_player: AudioStreamPlayer = _music_players[theme_name]
+	if new_player.stream == null:
+		new_player.stream = _get_theme_stream(theme_name)
 	if new_player.stream != null:
 		new_player.play()
 		print("[AudioManager] Reproduciendo tema adaptativo: ", theme_name)
