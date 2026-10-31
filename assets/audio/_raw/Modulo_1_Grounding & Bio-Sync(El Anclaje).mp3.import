@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Modulo_1_Grounding & Bio-Sync(El Anclaje).mp3-7aa82a02ab174696feec66607234bbed.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/_raw/Modulo_1_Grounding & Bio-Sync(El Anclaje).mp3"
+dest_files=[ "res://.import/Modulo_1_Grounding & Bio-Sync(El Anclaje).mp3-7aa82a02ab174696feec66607234bbed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

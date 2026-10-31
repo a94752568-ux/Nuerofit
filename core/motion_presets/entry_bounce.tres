@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://core/motion_presets/AnimationPreset.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "entry_bounce"
+duration = 0.3
+trans_type = 10
+ease_type = 1
+scale_factor = Vector2( 1.1, 1.1 )
+offset = Vector2( 0, 0 )

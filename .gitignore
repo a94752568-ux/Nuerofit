@@ -1,0 +1,23 @@
+# Godot 3.5 Ignores
+.import/
+export.cfg
+export_presets.bak
+
+# Builds & Exports
+build/
+*.apk
+*.aab
+
+# Keystores & Secrets
+*.keystore
+*.jks
+signing/
+.env.local
+.env
+*.pem
+
+# OS Specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Modulo_2_Fluid State(La Disolución).mp3-26709e4c60cb9af598cada96247d253b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/_raw/Modulo_2_Fluid State(La Disolución).mp3"
+dest_files=[ "res://.import/Modulo_2_Fluid State(La Disolución).mp3-26709e4c60cb9af598cada96247d253b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
