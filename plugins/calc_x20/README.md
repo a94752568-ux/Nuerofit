@@ -1,27 +1,33 @@
-# Plugin `calc.x20` — stub Fase A
+# Plugin `calc.x20` — Fase B
 
-Minijuego piloto de **velocidad de procesamiento**.
+Minijuego de **velocidad de procesamiento** (coral `#FF6B6B`).
 
 ## Estado
 
-- **Fase A (actual):** stub jugable que cierra el loop EventBus.
-  - INTRO → PLAYING (5 trials sintéticos) → RESULTS → Hub
-  - Emite `game_started`, `game_answer`, `game_ended`
-- **Fase B:** generador real, teclado numérico, 20 trials (ver `docs/plugin-calc-x20-design.md`)
+- **Fase B (actual):** jugable
+  - 20 trials reales
+  - `ProblemGenerator` por niveles 1–8
+  - `NumericPad` táctil (dígitos, ⌫, OK)
+  - Feedback vía `MotionManager` + eventos de `AudioManager`
+  - Señales EventBus: `game_started` / `game_answer` / `game_ended`
 
 ## Archivos
 
 | Archivo | Rol |
 |---------|-----|
-| `minigame.json` | Manifiesto para `PluginLoader` |
-| `CalcX20.tscn` | Escena raíz |
-| `CalcX20.gd` | State machine + UI mínima en código |
+| `minigame.json` | Manifiesto |
+| `CalcX20.tscn` / `CalcX20.gd` | Escena + state machine |
+| `ProblemGenerator.gd` | Estímulos por dificultad |
+| `NumericPad.gd` | Teclado numérico |
 
 ## Cómo probar
 
-1. Abrir el proyecto en Godot 3.5
-2. Ejecutar (F5) → HubCentral
-3. Tocar la tarjeta **Cálculos ×20**
-4. Empezar → pulsar «Responder» cinco veces → Volver al Hub
+1. Godot 3.5 → F5 → Hub → **Cálculos ×20**
+2. Empezar → 20 operaciones con el pad → Volver al Hub
 
-En consola deberías ver cargas de `PluginLoader`, `game_started`, respuestas y `game_ended`.
+| Nivel | Operaciones |
+|-------|-------------|
+| 1–2 | Suma simple |
+| 3–4 | Suma / resta |
+| 5–6 | + − × |
+| 7–8 | + − × ÷ exacta |
