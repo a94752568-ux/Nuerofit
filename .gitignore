@@ -21,3 +21,10 @@ signing/
 Thumbs.db
 *.swp
 *.swo
+
+# Artefactos de build / IDE
+.gradle/
+.idea/
+local.properties
+tools/godot/
+.godot/
