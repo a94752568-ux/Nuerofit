@@ -112,12 +112,18 @@ func _release_tween_record(node_id: int, record: Dictionary) -> void:
 			_active_tweens_by_node.erase(node_id)
 
 
-# Hit-Pause seguro (40-60 ms)
+# Hit-Pause seguro (40-60 ms) — mide tiempo REAL con OS.get_ticks_msec.
+# El SceneTreeTimer respeta Engine.time_scale, así que el timer anterior
+# quedaba en 0 s: la pausa duraba 1 frame en vez de los ms previstos.
 func trigger_hit_pause(duration_ms: float = Constants.HIT_PAUSE_DURATION_MS) -> void:
+	if Engine.time_scale != 1.0:
+		return  # evita pausas anidadas que dejen el time_scale colgado
 	Engine.time_scale = 0.0
-	yield(get_tree().create_timer((duration_ms / 1000.0) * Engine.time_scale, false), "timeout")
+	var start_ms := OS.get_ticks_msec()
+	var target_ms := int(duration_ms)
+	while OS.get_ticks_msec() - start_ms < target_ms:
+		yield(get_tree(), "idle_frame")
 	Engine.time_scale = 1.0
-
 
 # Funciones de conveniencia para aplicar presets
 func animate_entry(target: Control) -> void:
