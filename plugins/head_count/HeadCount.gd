@@ -250,6 +250,8 @@ func _on_answer(value: int, btn: Button) -> void:
 			MotionManager.animate_error(btn)
 		_status.text = "Había %d" % _true_count
 	yield(get_tree().create_timer(0.45), "timeout")
+	if _state != Constants.GameState.PLAYING:
+		return
 	if _trial_index >= TARGET_TRIALS:
 		_enter_results()
 	else:

@@ -158,7 +158,7 @@ func _enter_playing() -> void:
 	_word_panel.visible = true
 	_choice_grid.visible = true
 	EventBus.emit_safe("game_started", [PLUGIN_ID])
-	EventBus.emit_safe("audio_event_triggered", ["play_theme", {"theme": "focus"}])
+	EventBus.emit_safe("audio_event_triggered", ["play_theme", {"theme": "air"}])
 	_start_trial()
 
 
@@ -240,6 +240,8 @@ func _on_choice(key: String, btn: Button) -> void:
 			MotionManager.animate_error(btn)
 		_status.text = "Era %s (tinta)" % _ink_key
 	yield(get_tree().create_timer(0.45), "timeout")
+	if _state != Constants.GameState.PLAYING:
+		return
 	if _trial_index >= TARGET_TRIALS:
 		_enter_results()
 	else:

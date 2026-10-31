@@ -228,6 +228,8 @@ func _submit_answer() -> void:
 		_status.text = "Era %d" % int(_current["correct_answer"])
 		_answer_label.add_color_override("font_color", Color(1.0, 0.322, 0.322))
 	yield(get_tree().create_timer(0.45), "timeout")
+	if _state != Constants.GameState.PLAYING:
+		return
 	_answer_label.add_color_override("font_color", Color(0.0, 0.949, 0.996))
 	if _trial_index >= TARGET_TRIALS:
 		_enter_results()

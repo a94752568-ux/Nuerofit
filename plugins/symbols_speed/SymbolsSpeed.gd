@@ -237,6 +237,8 @@ func _on_option(symbol: String, btn: Button) -> void:
 			MotionManager.animate_error(btn)
 		_status.text = "Era %s" % _target_symbol
 	yield(get_tree().create_timer(0.4), "timeout")
+	if _state != Constants.GameState.PLAYING:
+		return
 	if _trial_index >= TARGET_TRIALS:
 		_enter_results()
 	else:
