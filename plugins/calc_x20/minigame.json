@@ -1,0 +1,25 @@
+{
+  "id": "calc.x20",
+  "version": "0.1.0",
+  "engine_min": "3.5.0",
+  "category": "processing_speed",
+  "difficulty_range": [1, 8],
+  "session_shape": {
+    "min_seconds": 45,
+    "max_seconds": 120,
+    "target_trials": 20
+  },
+  "input": ["tap", "keyboard"],
+  "render_profile": "ui_2d_low",
+  "scene": "res://plugins/calc_x20/CalcX20.tscn",
+  "cognitive_hooks": {
+    "metrics": ["accuracy", "avg_reaction_ms", "trials_completed"],
+    "adaptive_strategy": "staircase_accuracy"
+  },
+  "display": {
+    "name": "Cálculos ×20",
+    "short_name": "Cálculos",
+    "color": "#FF6B6B",
+    "icon": "calc"
+  }
+}
