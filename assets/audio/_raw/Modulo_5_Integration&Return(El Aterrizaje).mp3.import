@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Modulo_5_Integration&Return(El Aterrizaje).mp3-cbbfe4ecea7de27f1b7bc99c4693949e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/_raw/Modulo_5_Integration&Return(El Aterrizaje).mp3"
+dest_files=[ "res://.import/Modulo_5_Integration&Return(El Aterrizaje).mp3-cbbfe4ecea7de27f1b7bc99c4693949e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

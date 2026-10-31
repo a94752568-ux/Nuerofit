@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#F0F2F6">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NeuroFit (Godot Engine Core)"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A2E" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Plataforma de Entrenamiento Cognitivo"
+        android:textSize="14sp"
+        android:textColor="#666677" />
+
+</LinearLayout>
