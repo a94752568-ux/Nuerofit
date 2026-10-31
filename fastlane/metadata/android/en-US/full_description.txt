@@ -1,0 +1,13 @@
+NeuroFit es una plataforma de entrenamiento cognitivo offline-first: 5 minijuegos cortos con dificultad adaptativa (escalera 1–8), índice cognitivo y gráfica de progreso, sin anuncios, sin cuentas y sin conexión.
+
+Minijuegos:
+
+• Cálculos ×20 — velocidad de procesamiento (aritmética con pad táctil)
+• Velocidad de Símbolos — atención selectiva
+• Head Count — memoria a corto plazo
+• Memoria de Trabajo — n-back adaptativo 1/2/3
+• Test de Stroop — control inhibitorio
+
+Diseñada para hardware de bajo consumo (GLES2, presupuesto de 16.6 ms por frame). Todos los datos se guardan localmente en el dispositivo; la app no solicita el permiso INTERNET. Sin analytics ni tracking (ver PRIVACY.md en el repositorio).
+
+Licencia MIT.
