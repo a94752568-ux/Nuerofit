@@ -9,8 +9,8 @@ const TEXT_PRIMARY = Color(0.95, 0.95, 0.97)
 const TEXT_SECONDARY = Color(0.5, 0.5, 0.55)
 
 # Referencias UI
-onready var cognitive_index_label: Label = $VBoxContainer/TopSection/CognitiveIndex/ValueLabel
-onready var cognitive_trend_label: Label = $VBoxContainer/TopSection/CognitiveIndex/TrendLabel
+onready var cognitive_index_label: Label = $VBoxContainer/TopSection/CognitiveIndex/HBoxContainer/ValueLabel
+onready var cognitive_trend_label: Label = $VBoxContainer/TopSection/CognitiveIndex/HBoxContainer/TrendLabel
 onready var game_grid: GridContainer = $VBoxContainer/GameGrid/GridContainer
 onready var performance_chart: Control = $VBoxContainer/PerformanceSection/ChartContainer
 
@@ -182,7 +182,12 @@ func _on_game_selected(game_id: String) -> void:
 
 
 func _get_game_scene_path(game_id: String) -> String:
-	# Por ahora, todos van a GameSelection hasta que implementemos los minijuegos
+	# Preferir escena del plugin registrado; fallback a GameSelection
+	if PluginLoader.has_plugin(game_id):
+		var scene_path: String = PluginLoader.get_scene_path(game_id)
+		if scene_path != "":
+			return scene_path
+	push_warning("[HubCentral] Plugin no encontrado o sin escena: " + game_id)
 	return "res://scenes/GameSelection.tscn"
 
 
