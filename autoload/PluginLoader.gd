@@ -3,9 +3,42 @@ extends Node
 
 var loaded_plugins: Dictionary = {}  # plugin_id -> Dictionary (manifest)
 
+const PLUGINS_ROOT := "res://plugins"
+
 
 func _ready() -> void:
-	print("[PluginLoader] Inicializado.")
+	scan_plugins()
+	print("[PluginLoader] Inicializado. Plugins cargados: ", loaded_plugins.size())
+
+
+func scan_plugins() -> void:
+	loaded_plugins.clear()
+	var dir := Directory.new()
+	if dir.open(PLUGINS_ROOT) != OK:
+		push_warning("[PluginLoader] No existe carpeta de plugins: " + PLUGINS_ROOT)
+		return
+
+	dir.list_dir_begin(true, true)  # skip navigational, skip hidden
+	var entry := dir.get_next()
+	while entry != "":
+		if dir.current_is_dir():
+			var manifest_path := PLUGINS_ROOT + "/" + entry + "/minigame.json"
+			_load_manifest_file(manifest_path)
+		entry = dir.get_next()
+	dir.list_dir_end()
+
+
+func _load_manifest_file(path: String) -> bool:
+	var file := File.new()
+	if not file.file_exists(path):
+		return false
+	var err := file.open(path, File.READ)
+	if err != OK:
+		push_warning("[PluginLoader] No se pudo abrir: " + path)
+		return false
+	var text := file.get_as_text()
+	file.close()
+	return load_plugin_from_manifest_json(text)
 
 
 func validate_manifest(manifest: Dictionary) -> bool:
@@ -43,5 +76,29 @@ func load_plugin_from_manifest_json(json_text: String) -> bool:
 		return false
 
 	loaded_plugins[manifest["id"]] = manifest
-	print("[PluginLoader] Minijuego cargado exitosamente: ", manifest["id"])
+	print("[PluginLoader] Minijuego cargado: ", manifest["id"], " → ", manifest.get("scene", ""))
 	return true
+
+
+func get_all_plugins() -> Array:
+	var list: Array = []
+	for id in loaded_plugins.keys():
+		list.append(loaded_plugins[id])
+	return list
+
+
+func get_plugin(plugin_id: String) -> Dictionary:
+	if loaded_plugins.has(plugin_id):
+		return loaded_plugins[plugin_id]
+	return {}
+
+
+func has_plugin(plugin_id: String) -> bool:
+	return loaded_plugins.has(plugin_id)
+
+
+func get_scene_path(plugin_id: String) -> String:
+	var m: Dictionary = get_plugin(plugin_id)
+	if m.empty():
+		return ""
+	return str(m.get("scene", ""))
