@@ -42,6 +42,10 @@ SessionManager="*res://autoload/SessionManager.gd"
 SceneManager="*res://autoload/SceneManager.gd"
 DebugOverlay="*res://autoload/DebugOverlay.gd"
 
+[gui]
+
+theme/custom="res://assets/fonts/default_theme.tres"
+
 [display]
 
 window/size/width=1280

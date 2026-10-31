@@ -18,26 +18,26 @@ anchor_bottom = 1.0
 custom_constants/separation = 0
 
 [node name="TopSection" type="VBoxContainer" parent="VBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 180.0
+margin_right = 1282.0
+margin_bottom = 120.0
 custom_constants/separation = 16
 
 [node name="CognitiveIndex" type="PanelContainer" parent="VBoxContainer/TopSection"]
-margin_right = 1280.0
+margin_right = 1282.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopSection/CognitiveIndex"]
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 1268.0
-margin_bottom = 88.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1275.0
+margin_bottom = 93.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="VBoxContainer/TopSection/CognitiveIndex/HBoxContainer"]
-margin_top = 16.0
+margin_top = 13.0
 margin_right = 244.0
-margin_bottom = 60.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 244, 60 )
 text = "ÍNDICE COGNITIVO"
 align = 1
@@ -45,9 +45,9 @@ valign = 1
 
 [node name="ValueLabel" type="Label" parent="VBoxContainer/TopSection/CognitiveIndex/HBoxContainer"]
 margin_left = 264.0
-margin_top = 8.0
+margin_top = 13.0
 margin_right = 724.0
-margin_bottom = 68.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 460, 60 )
 custom_colors/font_color = Color( 0, 0.949, 0.996, 1 )
 text = "100"
@@ -56,41 +56,41 @@ valign = 1
 
 [node name="TrendLabel" type="Label" parent="VBoxContainer/TopSection/CognitiveIndex/HBoxContainer"]
 margin_left = 744.0
-margin_top = 16.0
+margin_top = 13.0
 margin_right = 1268.0
-margin_bottom = 60.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 524, 60 )
 text = "→ Estable"
 align = 1
 valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/TopSection"]
-margin_right = 1280.0
-margin_bottom = 84.0
+margin_top = 116.0
+margin_right = 1282.0
+margin_bottom = 120.0
 
 [node name="PerformanceSection" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 180.0
-margin_right = 1280.0
-margin_bottom = 380.0
+margin_top = 120.0
+margin_right = 1282.0
+margin_bottom = 320.0
 custom_constants/separation = 12
 
 [node name="Label" type="Label" parent="VBoxContainer/PerformanceSection"]
-margin_right = 1280.0
+margin_right = 1282.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 text = "RENDIMIENTO (ÚLTIMOS 7 DÍAS)"
 
 [node name="ChartContainer" type="Control" parent="VBoxContainer/PerformanceSection"]
 margin_top = 40.0
-margin_right = 1280.0
+margin_right = 1282.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 160 )
 
 [node name="GameGrid" type="ScrollContainer" parent="VBoxContainer"]
-margin_top = 380.0
-margin_right = 1280.0
-margin_bottom = 720.0
-custom_constants/separation = 0
+margin_top = 320.0
+margin_right = 1282.0
+margin_bottom = 320.0
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/GameGrid"]
 margin_right = 1280.0
@@ -104,15 +104,13 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 426, 120 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameGrid/GridContainer/CalcCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 12.0
-margin_bottom = 12.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="CalcLabel" type="Label" parent="VBoxContainer/GameGrid/GridContainer/CalcCard/VBoxContainer"]
-margin_right = 402.0
+margin_right = 412.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "calc"
@@ -120,42 +118,41 @@ align = 1
 valign = 1
 
 [node name="CalcName" type="Label" parent="VBoxContainer/GameGrid/GridContainer/CalcCard/VBoxContainer"]
-margin_top = 56.0
-margin_right = 402.0
-margin_bottom = 80.0
+margin_top = 52.0
+margin_right = 412.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "Cálculos ×20"
 align = 1
 
 [node name="CalcCategory" type="Label" parent="VBoxContainer/GameGrid/GridContainer/CalcCard/VBoxContainer"]
-margin_top = 88.0
-margin_right = 402.0
+margin_top = 80.0
+margin_right = 412.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 0, 16 )
 text = "Velocidad"
 align = 1
 
 [node name="CalcButton" type="Button" parent="VBoxContainer/GameGrid/GridContainer/CalcCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = ""
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="StroopCard" type="PanelContainer" parent="VBoxContainer/GameGrid/GridContainer"]
-margin_left = 432.0
-margin_right = 858.0
+margin_left = 430.0
+margin_right = 856.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 426, 120 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameGrid/GridContainer/StroopCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 12.0
-margin_bottom = 12.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="StroopLabel" type="Label" parent="VBoxContainer/GameGrid/GridContainer/StroopCard/VBoxContainer"]
-margin_right = 402.0
+margin_right = 412.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "stroop"
@@ -163,42 +160,41 @@ align = 1
 valign = 1
 
 [node name="StroopName" type="Label" parent="VBoxContainer/GameGrid/GridContainer/StroopCard/VBoxContainer"]
-margin_top = 56.0
-margin_right = 402.0
-margin_bottom = 80.0
+margin_top = 52.0
+margin_right = 412.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "Test de Stroop"
 align = 1
 
 [node name="StroopCategory" type="Label" parent="VBoxContainer/GameGrid/GridContainer/StroopCard/VBoxContainer"]
-margin_top = 88.0
-margin_right = 402.0
+margin_top = 80.0
+margin_right = 412.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 0, 16 )
 text = "Control"
 align = 1
 
 [node name="StroopButton" type="Button" parent="VBoxContainer/GameGrid/GridContainer/StroopCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = ""
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="HeadCountCard" type="PanelContainer" parent="VBoxContainer/GameGrid/GridContainer"]
-margin_left = 864.0
-margin_right = 1280.0
+margin_left = 860.0
+margin_right = 1276.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 416, 120 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameGrid/GridContainer/HeadCountCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 12.0
-margin_bottom = 12.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 409.0
+margin_bottom = 113.0
 
 [node name="HeadLabel" type="Label" parent="VBoxContainer/GameGrid/GridContainer/HeadCountCard/VBoxContainer"]
-margin_right = 392.0
+margin_right = 402.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "head"
@@ -206,42 +202,41 @@ align = 1
 valign = 1
 
 [node name="HeadName" type="Label" parent="VBoxContainer/GameGrid/GridContainer/HeadCountCard/VBoxContainer"]
-margin_top = 56.0
-margin_right = 392.0
-margin_bottom = 80.0
+margin_top = 52.0
+margin_right = 402.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "Head Count"
 align = 1
 
 [node name="HeadCategory" type="Label" parent="VBoxContainer/GameGrid/GridContainer/HeadCountCard/VBoxContainer"]
-margin_top = 88.0
-margin_right = 392.0
+margin_top = 80.0
+margin_right = 402.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 0, 16 )
 text = "Memoria"
 align = 1
 
 [node name="HeadButton" type="Button" parent="VBoxContainer/GameGrid/GridContainer/HeadCountCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = ""
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 409.0
+margin_bottom = 113.0
 
 [node name="WorkMemCard" type="PanelContainer" parent="VBoxContainer/GameGrid/GridContainer"]
-margin_top = 128.0
+margin_top = 124.0
 margin_right = 426.0
-margin_bottom = 248.0
+margin_bottom = 244.0
 rect_min_size = Vector2( 426, 120 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameGrid/GridContainer/WorkMemCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 12.0
-margin_bottom = 12.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="WorkLabel" type="Label" parent="VBoxContainer/GameGrid/GridContainer/WorkMemCard/VBoxContainer"]
-margin_right = 402.0
+margin_right = 412.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "workmem"
@@ -249,43 +244,42 @@ align = 1
 valign = 1
 
 [node name="WorkName" type="Label" parent="VBoxContainer/GameGrid/GridContainer/WorkMemCard/VBoxContainer"]
-margin_top = 56.0
-margin_right = 402.0
-margin_bottom = 80.0
+margin_top = 52.0
+margin_right = 412.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "Memoria de Trabajo"
 align = 1
 
 [node name="WorkCategory" type="Label" parent="VBoxContainer/GameGrid/GridContainer/WorkMemCard/VBoxContainer"]
-margin_top = 88.0
-margin_right = 402.0
+margin_top = 80.0
+margin_right = 412.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 0, 16 )
 text = "Memoria"
 align = 1
 
 [node name="WorkButton" type="Button" parent="VBoxContainer/GameGrid/GridContainer/WorkMemCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = ""
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="SymbolsCard" type="PanelContainer" parent="VBoxContainer/GameGrid/GridContainer"]
-margin_left = 432.0
-margin_top = 128.0
-margin_right = 858.0
-margin_bottom = 248.0
+margin_left = 430.0
+margin_top = 124.0
+margin_right = 856.0
+margin_bottom = 244.0
 rect_min_size = Vector2( 426, 120 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GameGrid/GridContainer/SymbolsCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 12.0
-margin_bottom = 12.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
 
 [node name="SymbolsLabel" type="Label" parent="VBoxContainer/GameGrid/GridContainer/SymbolsCard/VBoxContainer"]
-margin_right = 402.0
+margin_right = 412.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "symbols"
@@ -293,22 +287,23 @@ align = 1
 valign = 1
 
 [node name="SymbolsName" type="Label" parent="VBoxContainer/GameGrid/GridContainer/SymbolsCard/VBoxContainer"]
-margin_top = 56.0
-margin_right = 402.0
-margin_bottom = 80.0
+margin_top = 52.0
+margin_right = 412.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "Velocidad de Símbolos"
 align = 1
 
 [node name="SymbolsCategory" type="Label" parent="VBoxContainer/GameGrid/GridContainer/SymbolsCard/VBoxContainer"]
-margin_top = 88.0
-margin_right = 402.0
+margin_top = 80.0
+margin_right = 412.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 0, 16 )
 text = "Atención"
 align = 1
 
 [node name="SymbolsButton" type="Button" parent="VBoxContainer/GameGrid/GridContainer/SymbolsCard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = ""
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 113.0
